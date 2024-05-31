@@ -52,22 +52,23 @@ scrollToTopBtn.onclick = function() {
 };
 
 
-document.getElementById("openButton1").addEventListener("click", function() {
-    var popup = document.getElementById("popup");
-    if (popup.classList.contains("show")) {
-      popup.classList.remove("show");
-    } else {
-      popup.classList.add("show");
-    }
-  });
-  
-  document.getElementById("openButton2").addEventListener("click", function() {
-    document.getElementById("popup").classList.add("show");
-  });
-  
-  document.getElementById("closeButton").addEventListener("click", function() {
-    document.getElementById("popup").classList.remove("show");
-  });
+    // POPUP OPEN / CLOSE
+    document.getElementById("openButton1").addEventListener("click", function() {
+        var popup = document.getElementById("popup");
+        if (popup.classList.contains("show")) {
+            popup.classList.remove("show");
+        } else {
+            popup.classList.add("show");
+        }
+    });
+
+    document.getElementById("openButton2").addEventListener("click", function() {
+        document.getElementById("popup").classList.add("show");
+    });
+
+    document.getElementById("closeButton").addEventListener("click", function() {
+        document.getElementById("popup").classList.remove("show");
+    });
 
     // POPUP TEXT
     document.getElementById('sendButton').addEventListener('click', function() {

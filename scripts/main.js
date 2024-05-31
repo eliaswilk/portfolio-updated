@@ -68,3 +68,18 @@ document.getElementById("openButton1").addEventListener("click", function() {
   document.getElementById("closeButton").addEventListener("click", function() {
     document.getElementById("popup").classList.remove("show");
   });
+
+document.querySelector(".popup-content button").addEventListener("click", function() {
+    const inputs = document.querySelectorAll(".popup-content input");
+    const sendButton = this;
+
+    inputs.forEach(input => {
+        input.value = "";
+    });
+
+    sendButton.textContent = "Sent";
+
+    setTimeout(() => {
+        sendButton.textContent = "Send";
+    }, 3000);
+});

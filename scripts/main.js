@@ -69,17 +69,26 @@ document.getElementById("openButton1").addEventListener("click", function() {
     document.getElementById("popup").classList.remove("show");
   });
 
-document.querySelector(".popup-content button").addEventListener("click", function() {
-    const inputs = document.querySelectorAll(".popup-content input");
-    const sendButton = this;
+    // POPUP TEXT
+    document.getElementById('sendButton').addEventListener('click', function() {
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const messageInput = document.getElementById('message');
+        const sendButton = document.getElementById('sendButton');
 
-    inputs.forEach(input => {
-        input.value = "";
+        // Check if empty
+        if (nameInput.value === '' || emailInput.value === '' || messageInput.value === '') {
+            alert('Please fill all spaces before clicking send! 😁');
+            return;
+        }
+
+        nameInput.value = '';
+        emailInput.value = '';
+        messageInput.value = '';
+
+        sendButton.textContent = 'Sent';
+
+        setTimeout(function() {
+            sendButton.textContent = 'Send';
+        }, 2000);
     });
-
-    sendButton.textContent = "Sent";
-
-    setTimeout(() => {
-        sendButton.textContent = "Send";
-    }, 3000);
-});
